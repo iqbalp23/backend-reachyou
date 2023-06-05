@@ -4,7 +4,7 @@ import argon2 from "argon2";
 export const Login = async (req, res) =>{
     const user = await User.findOne({
         where: {
-            email: req.body.email
+            username: req.body.username
         }
     });
     if(!user) return res.status(404).json({msg: "User tidak ditemukan"});
